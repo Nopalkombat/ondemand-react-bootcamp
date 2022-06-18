@@ -2,8 +2,8 @@
 import { render } from '@testing-library/react';
 import Header from './index';
 
-describe('Card component test', () => {
-  it('Should render a card correctly', () => {
+describe('Header component test', () => {
+  it('Should render page header correctly', () => {
     const { getByAltText } = render(<Header />);
 
     expect(getByAltText(/E commeerce logo/i)).toBeInTheDocument();
