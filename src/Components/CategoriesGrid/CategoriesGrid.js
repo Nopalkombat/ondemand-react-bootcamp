@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
 import CategoryCard from '../CategoryCard';
 import Categories from '../../MockData/product-categories.json';

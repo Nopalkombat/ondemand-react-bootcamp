@@ -1,0 +1,11 @@
+.ProductsPage{
+    display: flex;
+    flex-wrap: wrap;
+
+    .ProductFilter{
+        width: 30%;
+    }
+    .ProductGrid{
+        width: 70%;
+    }
+}

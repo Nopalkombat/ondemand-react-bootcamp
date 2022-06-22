@@ -6,10 +6,10 @@ import CategoriesGrid from '../../Components/CategoriesGrid';
 
 const Homepage = () => {
   return (
-    <div className="Homepage">
+    <div className="Homepage content">
       <Slider />
       <CategoriesGrid />
-      <ProductGrid />
+      <ProductGrid showProductsButton={true} title={'Featured products'} />
     </div>
   );
 };
