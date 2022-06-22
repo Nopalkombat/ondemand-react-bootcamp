@@ -1,0 +1,54 @@
+@import '../../CSS/vars.scss';
+
+.Slider__gallery {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  margin-bottom: 2rem;
+
+  @media (max-width: $medium-screen) {
+    display: flex;
+    align-content: center;
+    flex-direction: column;
+    margin: auto;
+    width: fit-content;
+    width: 100%;
+  }
+}
+
+.Slider__img-slider {
+  width: 100%;
+  height: 600px;
+  border-radius: 15px;
+  background-size: cover;
+  background-position: center;
+
+  @media (max-width: $small-screen) {
+    height: 300px;
+  }
+}
+
+.Slider__buttons {
+  position: absolute;
+  height: 100%;
+  width: 40px;
+  color: white;
+  font-size: 25px;
+  right: 0;
+  background: rgba(128, 128, 128, 0.5);
+  border: none;
+  border-top-right-radius: 15px;
+  cursor: pointer;
+
+  &.right-button {
+    right: 0;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+  }
+
+  &.left-button {
+    left: 0;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+  }
+}

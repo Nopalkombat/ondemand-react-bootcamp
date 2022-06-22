@@ -1,0 +1,46 @@
+@import '../../CSS/vars.scss';
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  background-color: $primary-color;
+  box-shadow: 0px 0px 10px #a1b5d8;
+}
+
+.logoContainer {
+  img {
+    max-width: 250px;
+  }
+}
+
+@media (max-width: $large-screen) {
+  .logoContainer {
+    img {
+      display: block;
+      max-width: 200px;
+    }
+  }
+  .header {
+    flex-direction: column;
+  }
+}
+
+.header {
+  .logoContainer {
+    order: 0;
+    flex: 1 1 20%;
+    align-self: auto;
+  }
+  .SearchBox {
+    order: 0;
+    flex: 1 1 50%;
+    align-self: auto;
+  }
+  .cart {
+    order: 0;
+    flex: 0 1 10%;
+    align-self: auto;
+  }
+}

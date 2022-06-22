@@ -1,0 +1,14 @@
+.SearchBox {
+  input {
+    border-radius: 6px;
+    border-color: transparent;
+    text-align: left;
+    width: 80%;
+    height: 25px;
+    &:focus,
+    &:active {
+      outline: 0;
+    }
+    margin: 0.5rem 0;
+  }
+}

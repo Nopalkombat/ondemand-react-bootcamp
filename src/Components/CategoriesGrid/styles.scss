@@ -1,0 +1,13 @@
+@import '../../CSS/vars.scss';
+
+.CategoriesGrid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 0.5rem;
+  @media (min-width: $large-screen) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  h1 {
+    font-family: 'Montserrat', sans-serif;
+  }
+}

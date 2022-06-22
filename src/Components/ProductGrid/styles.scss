@@ -1,0 +1,20 @@
+@import '../../CSS/vars.scss';
+
+.ProductGrid {
+  --repeat: auto-fit;
+}
+@media (min-width: $large-screen) {
+  .ProductGrid {
+    --repeat: 4;
+  }
+}
+
+.ProductGrid {
+  display: grid;
+  max-width: 100%;
+  grid-template-columns: repeat(var(--repeat, auto-fit), minmax(200px, 1fr));
+  grid-gap: 1rem 0.5rem;
+  h1 {
+    font-family: 'Montserrat', sans-serif;
+  }
+}
