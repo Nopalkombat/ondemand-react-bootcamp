@@ -1,13 +1,23 @@
 /* eslint-disable react/prop-types */
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import ProductCard from '../ProductCard';
 import Products from '../../MockData/featured-products.json';
+import { FilterContext } from '../../Pages/ProductsPage/ProductsPage';
 import './styles.scss';
 
 const ProductGrid = (props) => {
-  const { showProductsButton, title } = props;
-  const products = Products.results;
+  const { showProductsButton, title, activeFilter } = props;
+  let products = Products.results;
+
+  const { filterState } = useContext(FilterContext);
+
+  if (activeFilter) {
+    if (filterState && filterState.length > 0) {
+      products = products.filter((product) => filterState.includes(product.data.category.id));
+    }
+  }
+
   return (
     <>
       <div className="ProductGrid">
