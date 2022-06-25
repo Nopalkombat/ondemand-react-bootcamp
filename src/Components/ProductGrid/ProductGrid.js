@@ -27,6 +27,12 @@ const ProductGrid = (props) => {
             <ProductCard key={product.id} {...product.data} />
           ))}
         </div>
+        {activeFilter && (
+          <div className="pagination button-container full center">
+            <button className="simple-button">Previous</button>
+            <button className="simple-button">Next</button>
+          </div>
+        )}
       </div>
       {showProductsButton && (
         <div className="button-container full center">

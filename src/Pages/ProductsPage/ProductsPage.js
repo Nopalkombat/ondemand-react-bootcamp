@@ -6,7 +6,6 @@ import './styles.scss';
 export const FilterContext = createContext('');
 
 const ProductPage = () => {
-  // const [filterState, setFilterState] = useState(['asdasd', 'asdasd43214']);
   const [filterState, setFilterState] = useState([]);
 
   return (

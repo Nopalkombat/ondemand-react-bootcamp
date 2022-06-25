@@ -20,3 +20,13 @@
     font-family: 'Montserrat', sans-serif;
   }
 }
+
+.pagination{
+  margin: 1.5rem auto;
+  button{
+    border: none;
+    margin: .5rem;
+    width: 100px;
+    cursor: pointer;
+  }
+}
