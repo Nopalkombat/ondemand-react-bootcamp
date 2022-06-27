@@ -9,7 +9,6 @@ import './styles.scss';
 const ProductGrid = (props) => {
   const { showProductsButton, title, activeFilter } = props;
   let products = Products.results;
-
   const { filterState } = useContext(FilterContext);
 
   if (activeFilter) {

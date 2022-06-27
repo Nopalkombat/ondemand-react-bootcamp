@@ -14,6 +14,7 @@ ReactDOM.render(
 
       <Routes>
         <Route path="/" exact element={<Homepage />} />
+        <Route path="/home" element={<Homepage />} />
         <Route path="/products" element={<Products />} />
       </Routes>
 
