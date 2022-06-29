@@ -1,15 +1,17 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import './styles.scss';
 
 const CategoryCard = (props) => {
-  const { name } = props;
+  const { data, slugs } = props;
+
   return (
-    <div className="CategoryCard">
+    <NavLink className="CategoryCard" to={`/products?category=${slugs}`}>
       <div className="container">
-        <p> {name} </p>
+        <p> {data.name} </p>
       </div>
-    </div>
+    </NavLink>
   );
 };
 

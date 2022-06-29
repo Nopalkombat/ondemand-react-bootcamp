@@ -2,18 +2,28 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import ProductCard from '../ProductCard';
-import Products from '../../MockData/featured-products.json';
+import { useProducts } from '../../utils/hooks/useProducts';
 import { FilterContext } from '../../Pages/ProductsPage/ProductsPage';
 import './styles.scss';
 
 const ProductGrid = (props) => {
   const { showProductsButton, title, activeFilter } = props;
-  let products = Products.results;
   const { filterState } = useContext(FilterContext);
 
+  const { data: productData, isLoading } = useProducts();
+  if (!productData || isLoading) {
+    return (
+      // <Loading/>
+      <h3>Loading ...</h3>
+    );
+  }
+
+  let filteredProducts = productData.results;
   if (activeFilter) {
     if (filterState && filterState.length > 0) {
-      products = products.filter((product) => filterState.includes(product.data.category.id));
+      filteredProducts = productData.results.filter((product) =>
+        filterState.includes(product.data.category.id)
+      );
     }
   }
 
@@ -22,8 +32,8 @@ const ProductGrid = (props) => {
       <div className="ProductGrid">
         <h1>{title}</h1>
         <div className="products">
-          {products.map((product) => (
-            <ProductCard key={product.id} {...product.data} />
+          {filteredProducts.map((product) => (
+            <ProductCard key={product.id} {...product} />
           ))}
         </div>
         {activeFilter && (

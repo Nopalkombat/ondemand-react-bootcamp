@@ -4,7 +4,7 @@ import './styles.scss';
 const CartButton = () => {
   return (
     <div className="cart">
-      <img src="shopping-cart.svg" alt="Cart" />
+      <img src="/shopping-cart.svg" alt="Cart" />
     </div>
   );
 };

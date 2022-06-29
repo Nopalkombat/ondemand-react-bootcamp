@@ -4,9 +4,9 @@ import React, { useState } from 'react';
 import CategoryCard from '../CategoryCard';
 import { useProductCategories } from '../../utils/hooks/useProductCategories';
 import './styles.scss';
+import { Link } from 'react-router-dom';
 
 const CategoriesGrid = () => {
-  const [productCategories, setProductCategories] = useState([]);
   const { data, isLoading } = useProductCategories();
 
   if (!data || isLoading) {
@@ -21,7 +21,7 @@ const CategoriesGrid = () => {
       <h1>Featured Categories</h1>
       <div className="CategoriesGrid">
         {data.results.map((category) => (
-          <CategoryCard key={category.id} {...category.data} />
+          <CategoryCard key={category.id} {...category} />
         ))}
       </div>
     </>

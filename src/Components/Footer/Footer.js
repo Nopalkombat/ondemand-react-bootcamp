@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <footer className="footer">
       <div>
-        <img src="AcademyLogo.jpg" alt="" className="academyLogo" />
+        <img src="/AcademyLogo.jpg" alt="" className="academyLogo" />
         <p>
           <i>Ecommerce created during Wizeline’s Academy React Bootcamp</i>
         </p>
