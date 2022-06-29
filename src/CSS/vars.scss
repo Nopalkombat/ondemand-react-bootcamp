@@ -9,3 +9,25 @@ $complementary2: #C2D8B9;
 $large-screen: 769px;
 $medium-screen: 425px;
 $small-screen: 375px;
+
+.button-container{
+    &.full{
+        width: 100%;
+        margin: 1rem;
+    }
+    &.center{
+        text-align: center;
+    }
+    .simple-button{
+        padding: .75rem;
+        background-color: $primary-color;
+        color: white;
+        text-decoration: none;
+    }
+}
+
+.content{
+    max-width: 74rem;
+    margin: 2rem auto;
+    padding: 0 2rem;
+}
