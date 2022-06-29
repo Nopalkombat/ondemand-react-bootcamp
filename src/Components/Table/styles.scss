@@ -1,0 +1,22 @@
+@import '../../CSS/vars.scss';
+
+.custom-table {
+    width: 100%;
+    background-color: $complementary1;
+    border-collapse: collapse;
+    border-width: 1px;
+    border-color: #7ea8f8;
+    border-style: solid;
+    color: #000000;
+    table-layout: fixed;
+
+    td, th {
+      border-width: 1px;
+      border-color: #7ea8f8;
+      border-style: solid;
+      padding: .5rem;
+    }
+    thead {
+        background-color: #7ea8f8;
+      }
+  }

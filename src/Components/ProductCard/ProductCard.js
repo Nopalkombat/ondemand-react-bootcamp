@@ -1,15 +1,11 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import { FormatPrice } from '../../utils/functions.js';
 import './styles.scss';
 
 const ProductCard = (props) => {
   const { id: productId, data } = props;
-
-  function FormatPrice(price) {
-    const formattedPrice = price.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
-    return '$' + formattedPrice;
-  }
 
   return (
     <div className="ProductCard">
