@@ -1,10 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Homepage from './Pages/Homepage';
-import Products from './Pages/ProductsPage';
+import { BrowserRouter, Routes } from 'react-router-dom';
 import Header from './Components/Header';
 import Footer from './Components/Footer';
+import routes from './Routes/AppRouter';
 import './index.scss';
 
 ReactDOM.render(
@@ -12,10 +11,7 @@ ReactDOM.render(
     <BrowserRouter>
       <Header />
 
-      <Routes>
-        <Route path="/" exact element={<Homepage />} />
-        <Route path="/products" element={<Products />} />
-      </Routes>
+      <Routes>{routes}</Routes>
 
       <Footer />
     </BrowserRouter>
