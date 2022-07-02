@@ -12,5 +12,5 @@ export default [
   <Route path="/products?category:categorySlug" element={<Products />} key="productsCategory" />,
   <Route path="/product/:productId" exact element={<SingleProduct />} key="singleProduct" />,
   <Route path="/search" exact element={<SearchPage />} key="searchResultsAll" />,
-  <Route path="/search?q=:searchTerm" element={<SearchPage />} key="searchResults" />,
+  <Route path="/search?={:q}&={:page}" exact element={<SearchPage />} key="searchResults" />,
 ];

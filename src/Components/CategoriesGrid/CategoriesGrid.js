@@ -4,7 +4,6 @@ import React, { useState } from 'react';
 import CategoryCard from '../CategoryCard';
 import { useProductCategories } from '../../utils/hooks/useProductCategories';
 import './styles.scss';
-import { Link } from 'react-router-dom';
 
 const CategoriesGrid = () => {
   const { data, isLoading } = useProductCategories();

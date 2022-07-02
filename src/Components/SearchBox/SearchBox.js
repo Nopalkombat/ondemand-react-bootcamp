@@ -4,7 +4,9 @@ import './styles.scss';
 const SearchBox = () => {
   return (
     <div className="SearchBox">
-      <input type="search" placeholder="search for something" />
+      <form action="/search">
+        <input type="search" name="q" placeholder=" search for something" />
+      </form>
     </div>
   );
 };

@@ -2,16 +2,14 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import ProductCard from '../ProductCard';
-import { useProducts } from '../../utils/hooks/useProducts';
 import { FilterContext } from '../../Pages/ProductsPage/ProductsPage';
 import './styles.scss';
 
 const ProductGrid = (props) => {
-  const { showProductsButton, title, activeFilter } = props;
+  const { showProductsButton, title, activeFilter, productData } = props;
   const { filterState } = useContext(FilterContext);
 
-  const { data: productData, isLoading } = useProducts();
-  if (!productData || isLoading) {
+  if (!productData) {
     return (
       // <Loading/>
       <h3>Loading ...</h3>

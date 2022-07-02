@@ -1,13 +1,14 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
 import { useProductSearch } from '../../utils/hooks/useProductSearch';
+import ProductGrid from '../../Components/ProductGrid';
 import './styles.scss';
 
 const SingleProduct = () => {
-  const { searchTerm } = useParams();
-  const { data: productData, isLoading } = useProductSearch(searchTerm);
+  const { search } = window.location;
+  const searchTerm = new URLSearchParams(search).get('q');
+  // const page = new URLSearchParams(search).get('page') || 1;
+  const { data: productData, isLoading } = useProductSearch();
 
-  console.log(productData);
   if (!productData || isLoading) {
     return (
       // <Loading />
@@ -17,7 +18,16 @@ const SingleProduct = () => {
 
   return (
     <>
-      <div className="content single-product">1</div>
+      <div className="content search-results">
+        <div className="content">
+          <ProductGrid
+            title={'Search results for: ' + (searchTerm || 'no search term entered')}
+            activeFilter={true}
+            productData={productData}
+            totalPages={productData.total_pages}
+          />
+        </div>
+      </div>
     </>
   );
 };
