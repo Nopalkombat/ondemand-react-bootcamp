@@ -1,13 +1,14 @@
 /* eslint-disable react/prop-types */
-import React, { useContext } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import ProductCard from '../ProductCard';
-import { FilterContext } from '../../Pages/ProductsPage/ProductsPage';
 import './styles.scss';
 
 const ProductGrid = (props) => {
-  const { showProductsButton, title, activeFilter, productData } = props;
-  const { filterState } = useContext(FilterContext);
+  const { showProductsButton, title, activeFilter, productData, setSearchParams, searchParams } =
+    props;
+  const [disabledPrev, setDisabledPrev] = useState(false);
+  const [disabledNext, setDisabledNext] = useState(false);
 
   if (!productData) {
     return (
@@ -16,12 +17,23 @@ const ProductGrid = (props) => {
     );
   }
 
-  let filteredProducts = productData.results;
-  if (activeFilter) {
-    if (filterState && filterState.length > 0) {
-      filteredProducts = productData.results.filter((product) =>
-        filterState.includes(product.data.category.id)
-      );
+  let filteredProducts = productData.results || [];
+
+  function prevPage() {
+    let current = Number(searchParams.get('page'));
+    if (current - 1 == 0) setDisabledPrev(true);
+    else {
+      setSearchParams({ page: current - 1 });
+      setDisabledPrev(false);
+    }
+  }
+
+  function nextPage() {
+    let current = Number(searchParams.get('page'));
+    if (current + 1 >= productData.total_pages) setDisabledNext(true);
+    else {
+      setSearchParams({ page: current + 1 });
+      setDisabledNext(true);
     }
   }
 
@@ -36,14 +48,18 @@ const ProductGrid = (props) => {
         </div>
         {activeFilter && (
           <div className="pagination button-container full center">
-            <button className="simple-button">Previous</button>
-            <button className="simple-button">Next</button>
+            <button className="simple-button previous" onClick={prevPage} disabled={disabledPrev}>
+              Previous
+            </button>
+            <button className="simple-button next" onClick={nextPage} disabled={disabledNext}>
+              Next
+            </button>
           </div>
         )}
       </div>
       {showProductsButton && (
         <div className="button-container full center">
-          <Link to="/products" className="simple-button">
+          <Link to="/products?page=1" className="simple-button">
             View all products
           </Link>
         </div>

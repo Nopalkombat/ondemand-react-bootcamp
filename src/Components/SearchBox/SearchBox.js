@@ -1,11 +1,29 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { createSearchParams, useNavigate } from 'react-router-dom';
 import './styles.scss';
 
 const SearchBox = () => {
+  const [search, setSearch] = useState('');
+  const navigate = useNavigate();
+
+  function handleSubmit() {
+    navigate({
+      pathname: 'search',
+      search: createSearchParams({
+        q: search,
+      }).toString(),
+    });
+  }
+
   return (
     <div className="SearchBox">
-      <form action="/search">
-        <input type="search" name="q" placeholder=" search for something" />
+      <form onSubmit={handleSubmit}>
+        <input
+          type="search"
+          name="q"
+          placeholder=" search for something"
+          onChange={(e) => setSearch(e.target.value)}
+        />
       </form>
     </div>
   );
