@@ -8,7 +8,7 @@ const SearchBox = () => {
 
   function handleSubmit() {
     navigate({
-      pathname: 'search',
+      pathname: 'search?page=1',
       search: createSearchParams({
         q: search,
       }).toString(),

@@ -3,11 +3,10 @@ import { API_BASE_URL } from '../constants';
 import { useLatestAPI } from './useLatestAPI';
 // import { useParams } from 'react-router-dom';
 
-export function useProductSearch() {
+export function useProductSearch(page = 1) {
   // use params dind't work here :(
   const { search } = window.location;
   const searchTerm = new URLSearchParams(search).get('q');
-  const page = new URLSearchParams(search).get('page') || 1;
   const { ref: apiRef, isLoading: isApiMetadataLoading } = useLatestAPI();
   const [searchParam, setSearch] = useState(() => ({
     data: {},
@@ -47,7 +46,7 @@ export function useProductSearch() {
     return () => {
       controller.abort();
     };
-  }, [apiRef, isApiMetadataLoading]);
+  }, [apiRef, isApiMetadataLoading, page]);
 
   return searchParam;
 }

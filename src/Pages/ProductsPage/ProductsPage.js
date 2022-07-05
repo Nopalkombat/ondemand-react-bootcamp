@@ -2,17 +2,16 @@ import React, { createContext, useState } from 'react';
 import ProductGrid from '../../Components/ProductGrid';
 import { useProducts } from '../../utils/hooks/useProducts';
 import ProductFilter from '../../Components/ProductFilter';
-import { useLocation, useSearchParams } from 'react-router-dom';
+import { useSearchParams } from 'react-router-dom';
 import './styles.scss';
 
 export const FilterContext = createContext('');
 
 const ProductPage = () => {
-  const { search } = useLocation();
-  const page = search.replace('?page=', '') || '1';
+  let [searchParams, setSearchParams] = useSearchParams();
+  const page = Number(searchParams.get('page'));
   const [filterState, setFilterState] = useState([]);
   const { data: productData, isLoading } = useProducts(filterState, page);
-  let [searchParams, setSearchParams] = useSearchParams();
   if (!productData || isLoading) {
     return (
       // <Loading/>

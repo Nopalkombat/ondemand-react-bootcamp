@@ -1,13 +1,15 @@
 import React from 'react';
 import { useProductSearch } from '../../utils/hooks/useProductSearch';
 import ProductGrid from '../../Components/ProductGrid';
+import { useSearchParams } from 'react-router-dom';
 import './styles.scss';
 
 const SingleProduct = () => {
   const { search } = window.location;
   const searchTerm = new URLSearchParams(search).get('q');
-  // const page = new URLSearchParams(search).get('page') || 1;
-  const { data: productData, isLoading } = useProductSearch();
+  let [searchParams, setSearchParams] = useSearchParams();
+  const page = Number(searchParams.get('page'));
+  const { data: productData, isLoading } = useProductSearch(page);
 
   if (!productData || isLoading) {
     return (
@@ -24,7 +26,8 @@ const SingleProduct = () => {
             title={'Search results for: ' + (searchTerm || 'no search term entered')}
             activeFilter={true}
             productData={productData}
-            totalPages={productData.total_pages}
+            setSearchParams={setSearchParams}
+            searchParams={searchParams}
           />
         </div>
       </div>

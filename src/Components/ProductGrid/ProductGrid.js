@@ -21,18 +21,22 @@ const ProductGrid = (props) => {
 
   function prevPage() {
     let current = Number(searchParams.get('page'));
-    if (current - 1 == 0) setDisabledPrev(true);
+    let q = searchParams.get('q') || '';
+    if (current == 1) setDisabledPrev(true);
     else {
-      setSearchParams({ page: current - 1 });
+      // setSearchParams({ page: current - 1 });
+      setSearchParams({ page: current - 1, q: q });
       setDisabledPrev(false);
     }
   }
 
   function nextPage() {
     let current = Number(searchParams.get('page'));
-    if (current + 1 >= productData.total_pages) setDisabledNext(true);
+    let q = searchParams.get('q') || '';
+    if (current == productData.total_pages) setDisabledNext(true);
     else {
-      setSearchParams({ page: current + 1 });
+      // setSearchParams({ page: current + 1 });
+      setSearchParams({ page: current + 1, q: q });
       setDisabledNext(true);
     }
   }
