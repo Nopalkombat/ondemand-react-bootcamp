@@ -1,7 +1,7 @@
-/* eslint-disable react/prop-types */
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import ProductCard from '../ProductCard';
+import PropTypes from 'prop-types';
 import './styles.scss';
 
 const ProductGrid = (props) => {
@@ -70,6 +70,15 @@ const ProductGrid = (props) => {
       )}
     </>
   );
+};
+
+ProductGrid.propTypes = {
+  showProductsButton: PropTypes.bool,
+  title: PropTypes.string,
+  activeFilter: PropTypes.bool,
+  productData: PropTypes.object,
+  setSearchParams: PropTypes.func,
+  searchParams: PropTypes.string,
 };
 
 export default ProductGrid;

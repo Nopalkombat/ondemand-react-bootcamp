@@ -1,6 +1,6 @@
-/* eslint-disable react/prop-types */
 import { NavLink } from 'react-router-dom';
 import { FormatPrice } from '../../utils/functions.js';
+import PropTypes from 'prop-types';
 import './styles.scss';
 
 const ProductCard = (props) => {
@@ -19,6 +19,11 @@ const ProductCard = (props) => {
       </div>
     </div>
   );
+};
+
+ProductCard.propTypes = {
+  id: PropTypes.string,
+  data: PropTypes.object,
 };
 
 export default ProductCard;

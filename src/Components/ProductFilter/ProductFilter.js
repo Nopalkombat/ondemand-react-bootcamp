@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import { useContext } from 'react';
 import { FilterContext } from '../../Pages/ProductsPage/ProductsPage';
 import { useProductCategories } from '../../utils/hooks/useProductCategories';
 

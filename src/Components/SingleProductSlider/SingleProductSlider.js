@@ -1,9 +1,6 @@
-/* eslint-disable react/prop-types */
-/* eslint-disable no-unused-vars */
-import React, { useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, { Navigation, Thumbs } from 'swiper';
-
+import PropTypes from 'prop-types';
 import 'swiper/swiper-bundle.min.css';
 import './styles.scss';
 
@@ -30,6 +27,10 @@ const SingleProductSlider = ({ images }) => {
       {slides}
     </Swiper>
   );
+};
+
+SingleProductSlider.propTypes = {
+  images: PropTypes.array,
 };
 
 export default SingleProductSlider;

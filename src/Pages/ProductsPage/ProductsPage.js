@@ -1,4 +1,4 @@
-import React, { createContext, useState } from 'react';
+import { createContext, useState } from 'react';
 import ProductGrid from '../../Components/ProductGrid';
 import { useProducts } from '../../utils/hooks/useProducts';
 import ProductFilter from '../../Components/ProductFilter';

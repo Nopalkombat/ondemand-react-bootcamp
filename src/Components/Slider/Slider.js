@@ -1,5 +1,4 @@
-/* eslint-disable react/prop-types */
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { useFeaturedBanners } from '../../utils/hooks/useFeaturedBanners';
 import './styles.scss';
 

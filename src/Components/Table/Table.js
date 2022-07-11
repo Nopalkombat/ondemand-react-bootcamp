@@ -1,4 +1,4 @@
-/* eslint-disable react/prop-types */
+import PropTypes from 'prop-types';
 import './styles.scss';
 
 const Table = ({ info }) => {
@@ -20,6 +20,10 @@ const Table = ({ info }) => {
       <tbody>{tdData()}</tbody>
     </table>
   );
+};
+
+Table.propTypes = {
+  info: PropTypes.array,
 };
 
 export default Table;

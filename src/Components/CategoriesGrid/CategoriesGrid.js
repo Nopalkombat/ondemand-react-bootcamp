@@ -1,6 +1,3 @@
-/* eslint-disable no-unused-vars */
-/* eslint-disable react/prop-types */
-import React, { useState } from 'react';
 import CategoryCard from '../CategoryCard';
 import { useProductCategories } from '../../utils/hooks/useProductCategories';
 import './styles.scss';

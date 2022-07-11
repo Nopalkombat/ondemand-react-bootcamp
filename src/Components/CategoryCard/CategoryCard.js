@@ -1,5 +1,5 @@
-/* eslint-disable react/prop-types */
 import { NavLink } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import './styles.scss';
 
 const CategoryCard = (props) => {
@@ -12,6 +12,11 @@ const CategoryCard = (props) => {
       </div>
     </NavLink>
   );
+};
+
+CategoryCard.propTypes = {
+  data: PropTypes.object,
+  slugs: PropTypes.array,
 };
 
 export default CategoryCard;

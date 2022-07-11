@@ -1,6 +1,5 @@
-/* eslint-disable no-unused-vars */
-/* eslint-disable react/prop-types */
 import { useParams } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 const Pagination = (props) => {
   const { total_pages, currentPage } = props;
@@ -27,6 +26,11 @@ const Pagination = (props) => {
       </button>
     </div>
   );
+};
+
+Pagination.propTypes = {
+  total_pages: PropTypes.Number,
+  currentPage: PropTypes.Number,
 };
 
 export default Pagination;
