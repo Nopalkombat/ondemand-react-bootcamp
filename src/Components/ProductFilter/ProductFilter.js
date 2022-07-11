@@ -25,10 +25,6 @@ const ProductFilter = () => {
     );
   }
 
-  function resetFilters() {
-    setFilterState([]);
-  }
-
   return (
     <div className="ProductFilter">
       <h2>Categories</h2>
@@ -45,7 +41,7 @@ const ProductFilter = () => {
         ))}
         {filterState.length > 0 && (
           <div className="button-container">
-            <button className="simple-button" onClick={() => resetFilters()}>
+            <button className="simple-button" onClick={() => setFilterState([])}>
               Clear all
             </button>
           </div>

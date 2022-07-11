@@ -17,11 +17,11 @@ const ProductGrid = (props) => {
     );
   }
 
-  let filteredProducts = productData.results || [];
+  const filteredProducts = productData.results || [];
 
   function prevPage() {
-    let current = Number(searchParams.get('page'));
-    let q = searchParams.get('q') || '';
+    const current = Number(searchParams.get('page'));
+    const q = searchParams.get('q') || '';
     if (current == 1) setDisabledPrev(true);
     else {
       // setSearchParams({ page: current - 1 });
@@ -31,8 +31,8 @@ const ProductGrid = (props) => {
   }
 
   function nextPage() {
-    let current = Number(searchParams.get('page'));
-    let q = searchParams.get('q') || '';
+    const current = Number(searchParams.get('page'));
+    const q = searchParams.get('q') || '';
     if (current == productData.total_pages) setDisabledNext(true);
     else {
       // setSearchParams({ page: current + 1 });

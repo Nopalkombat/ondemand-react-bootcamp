@@ -1,4 +1,3 @@
-import React from 'react';
 import { useParams } from 'react-router-dom';
 import { FormatPrice } from '../../utils/functions';
 import { useSingleProduct } from '../../utils/hooks/useSingleProduct';

@@ -1,5 +1,4 @@
 /* eslint-disable react/prop-types */
-import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { FormatPrice } from '../../utils/functions.js';
 import './styles.scss';

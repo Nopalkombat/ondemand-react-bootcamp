@@ -1,4 +1,3 @@
-import React from 'react';
 import './styles.scss';
 import { useProducts } from '../../utils/hooks/useProducts';
 import ProductGrid from '../../Components/ProductGrid';

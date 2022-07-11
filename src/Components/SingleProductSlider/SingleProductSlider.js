@@ -25,7 +25,6 @@ const SingleProductSlider = ({ images }) => {
       spaceBetween={10}
       navigation={true}
       slidesPerView={1}
-      onSwiper={console.log('change slide')}
       className="main-slider"
     >
       {slides}

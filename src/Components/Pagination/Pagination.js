@@ -1,6 +1,5 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
-import React from 'react';
 import { useParams } from 'react-router-dom';
 
 const Pagination = (props) => {
@@ -11,18 +10,11 @@ const Pagination = (props) => {
   function addPagination() {
     if (newPage == total_pages) return;
     newPage++;
-    redirectToPage(newPage);
   }
 
   function substractPagination() {
     if (currentPage == 1) return 1;
     newPage--;
-    redirectToPage(newPage);
-  }
-  function redirectToPage(page) {
-    console.log('page', page);
-    console.log('?q=' + q + '&page=' + page);
-    //window.location.href('?q=' + q + '&page=' + page);
   }
 
   return (

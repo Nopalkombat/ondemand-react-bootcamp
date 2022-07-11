@@ -1,4 +1,3 @@
-import React from 'react';
 import { useProductSearch } from '../../utils/hooks/useProductSearch';
 import ProductGrid from '../../Components/ProductGrid';
 import { useSearchParams } from 'react-router-dom';
