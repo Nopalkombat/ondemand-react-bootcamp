@@ -1,4 +1,3 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 import CartButton from '../Cartbutton';
 import SearchBox from '../SearchBox';
@@ -9,7 +8,7 @@ const Header = () => {
     <header className="header">
       <div className="logoContainer">
         <Link to="/">
-          <img src="placeholderLogo.png" alt="E commeerce logo" />
+          <img src="/placeholderLogo.png" alt="E commeerce logo" />
         </Link>
       </div>
       <SearchBox />

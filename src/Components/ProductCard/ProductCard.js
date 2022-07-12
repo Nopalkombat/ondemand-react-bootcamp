@@ -1,23 +1,29 @@
-/* eslint-disable react/prop-types */
-import React from 'react';
+import { NavLink } from 'react-router-dom';
+import { FormatPrice } from '../../utils/functions.js';
+import PropTypes from 'prop-types';
 import './styles.scss';
 
 const ProductCard = (props) => {
-  const { name, mainimage, category, price } = props;
-
-  function FormatPrice(price) {
-    const formattedPrice = price.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,'); // 12,345.67
-    return '$' + formattedPrice;
-  }
+  const { id: productId, data } = props;
 
   return (
     <div className="ProductCard">
-      <img src={mainimage.url} alt={name} />
-      <p>{name}</p>
-      <span className="product__category">{category.slug}</span>
-      <span className="product__price">{FormatPrice(price)}</span>
+      <NavLink to={`/product/${productId}`}>
+        <img src={data.mainimage.url} alt={data.name} />
+        <p>{data.name}</p>
+        <span className="product__category">{data.category.slug}</span>
+        <span className="product__price">{FormatPrice(data.price)}</span>
+      </NavLink>
+      <div className="button-container">
+        <a className="add-to-cart">Add to cart</a>
+      </div>
     </div>
   );
+};
+
+ProductCard.propTypes = {
+  id: PropTypes.string,
+  data: PropTypes.object,
 };
 
 export default ProductCard;

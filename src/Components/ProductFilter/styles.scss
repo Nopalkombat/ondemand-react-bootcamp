@@ -1,3 +1,5 @@
+@import '../../CSS/vars.scss';
+
 .ProductFilter{    
     label{
         position: relative;
@@ -22,6 +24,17 @@
                     transition-delay: 0.4s;
             }
         }
+    }
+    .simple-button{
+        background: $primary-color;
+        font-size: 1rem;
+        border: none;
+        width: 90%;
+        margin: 0;
+        cursor: pointer;
+    }
+    .button-container{
+        transition: ease-in-out all 0.3s;
     }
 
 }
