@@ -3,6 +3,7 @@ import Homepage from '../Pages/Homepage';
 import Products from '../Pages/ProductsPage';
 import SingleProduct from '../Pages/SingleProduct';
 import SearchPage from '../Pages/SearchPage';
+import CartPage from '../Pages/CartPage';
 
 export default [
   <Route path="/" exact element={<Homepage />} key="homepage" />,
@@ -13,4 +14,5 @@ export default [
   <Route path="/search" exact element={<SearchPage />} key="searchResultsAll" />,
   <Route path="/search?={:q}" exact element={<SearchPage />} key="searchResults" />,
   <Route path="/search?={:q}&={:page}" exact element={<SearchPage />} key="searchResults" />,
+  <Route path="/cart" exact element={<CartPage />} key="cartPage" />,
 ];

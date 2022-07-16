@@ -1,29 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
-import { useFeaturedBanners } from './utils/hooks/useFeaturedBanners';
+import React, { createContext, useState } from 'react';
+import { BrowserRouter, Routes } from 'react-router-dom';
+import Header from './Components/Header';
+import Footer from './Components/Footer';
+import routes from './Routes/AppRouter';
+import './index.scss';
 
-function App() {
-  const { data, isLoading } = useFeaturedBanners();
-  console.log(data, isLoading);
+export const CartContext = createContext('');
 
+const App = () => {
+  const [cartState, setCartState] = useState([]);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <CartContext.Provider value={{ cartState, setCartState }}>
+      <React.StrictMode>
+        <BrowserRouter>
+          <Header />
+
+          <Routes>{routes}</Routes>
+
+          <Footer />
+        </BrowserRouter>
+      </React.StrictMode>
+    </CartContext.Provider>
   );
-}
+};
 
 export default App;

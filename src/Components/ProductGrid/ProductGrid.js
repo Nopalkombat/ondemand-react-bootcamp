@@ -78,7 +78,7 @@ ProductGrid.propTypes = {
   activeFilter: PropTypes.bool,
   productData: PropTypes.object,
   setSearchParams: PropTypes.func,
-  searchParams: PropTypes.string,
+  searchParams: PropTypes.object,
 };
 
 export default ProductGrid;
