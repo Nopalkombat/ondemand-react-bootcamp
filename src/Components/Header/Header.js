@@ -7,7 +7,7 @@ import './styles.scss';
 
 const Header = () => {
   const { cartState } = useContext(CartContext);
-  const totalItems = cartState.reduce((acc, obj) => acc + obj.q, 0);
+  const totalItems = cartState ? cartState.reduce((acc, obj) => acc + obj.q, 0) : 0;
   return (
     <header className="header">
       <div className="logoContainer">

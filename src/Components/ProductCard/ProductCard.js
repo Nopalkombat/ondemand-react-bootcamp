@@ -15,7 +15,9 @@ const ProductCard = (props) => {
         <span className="product__price">{FormatPrice(data.price)}</span>
       </NavLink>
       <div className="button-container">
-        <a className="add-to-cart">Add to cart</a>
+        <NavLink to={`/product/${productId}`} className="add-to-cart">
+          Add to cart
+        </NavLink>
       </div>
     </div>
   );

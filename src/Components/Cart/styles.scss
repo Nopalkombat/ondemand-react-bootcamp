@@ -1,0 +1,27 @@
+.cartTable {
+  width: 100%;
+  border: 2px solid forestgreen;
+  border-collapse: collapse;
+
+  th {
+    border-bottom: 1px solid black;
+  }
+  td {
+    &:not(.name) {
+      text-align: center;
+    }
+  }
+
+  img {
+    max-width: 80px;
+  }
+}
+.totals {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  a {
+    margin: 1rem;
+  }
+}

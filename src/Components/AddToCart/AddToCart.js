@@ -7,7 +7,8 @@ const AddToCart = (props) => {
   const { cartState, setCartState } = useContext(CartContext);
   const { product, showQuantity } = props;
   const [quantity, setQuantity] = useState(1);
-  // const productId = product.results[0].id;
+  // const productSku = product.results[0].data.sku;
+  const productId = product.results[0].id;
   const productData = product.results[0].data;
   const productStock = product.results[0].data.stock;
 
@@ -16,14 +17,22 @@ const AddToCart = (props) => {
     setQuantity(currentQuantity);
   }
 
-  //   const isAdded = (id) => cartState.includes(id);
+  // const isAdded = (productId) => cartState.some((e) => e.id === productId);
+
   function CartUpdate() {
+    // if (isAdded(productId)) {
+    //   const current = cartState.filter((product) => product.id === productId);
+    //   const modifyQ = Number(current[0].q) + Number(quantity);
+    //   const original = [...cartState];
+    //   const newCart = original.slice(original.indexOf(current), 1);
+    //   setCartState([newCart, { product: productData, q: modifyQ, id: productId }]);
+    // } else setCartState([...cartState, { product: productData, q: quantity, id: productId }]);
     // setCartState(
     //   isAdded(productId)
-    //     ? cartState.filter((prodId) => prodId !== productId)
-    //     : [...cartState, { id: productId, q: quantity }]
+    //     ? setQuantity(Number(cartState.q) + Number(quantity))
+    //     : [...cartState, { product: productData, q: quantity, id: productId }]
     // );
-    setCartState([...cartState, { product: productData, q: quantity }]);
+    setCartState([...cartState, { product: productData, q: quantity, id: productId }]);
   }
 
   if (productStock === 0) return <p>No stock available</p>;
